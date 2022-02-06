@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trouvetondevoir.fr</title>
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="book"></ion-icon></span>
+                        <span class="title">Trouvetondevoir</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="home"></ion-icon></span>
+                        <span class="title">Page d'accueil</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="calculator"></ion-icon></span>
+                        <span class="title">Les devoirs</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="chatbubbles"></ion-icon></span>
+                        <span class="title">Aide aux devoirs</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="contact"></ion-icon></span>
+                        <span class="title">Se connecter</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                  <ion-icon name="menu"></ion-icon>
+                </div>
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Rechercher">
+                        <ion-icon name="search"></ion-icon>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers">418</div>
+                        <div class="cardName">Nombre de devoirs corrigés</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="trending-up"></ion-icon>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="numbers">264</div>
+                        <div class="cardName">Nombre d'inscrits</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="person"></ion-icon>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="details">
+                <div class="recentDm">
+                    <div class="cardHeader">
+                        <h2>Ajouts Récents</h2>
+                        <a href="#" class="btn">Tout voir</a>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Titre du sujet</td>
+                                <td>Matière</td>
+                                <td>Niveau</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Sujet sur l'oxydoréduction</td>
+                                <td>Physique-Chimie</td>
+                                <td>Lycée</td>
+                            </tr>
+                            <tr>
+                                <td>Théorème de Talès</td>
+                                <td>Mathématique</td>
+                                <td>Collège</td>
+                            </tr>
+                            <tr>
+                                <td>Division cellulaire</td>
+                                <td>SVT</td>
+                                <td>Lycée</td>
+                            </tr>
+                            <tr>
+                                <td>Dérivée de fonction</td>
+                                <td>Mathématique</td>
+                                <td>Lycée</td>
+                            </tr>
+                            <tr>
+                                <td>Equation</td>
+                                <td>Mathématique</td>
+                                <td>Collège</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script>
+        let toggle = document.querySelector('.toggle');
+        let navigation = document.querySelector('.navigation');
+        let main = document.querySelector('.main');
+
+        toggle.onclick = function(){
+            navigation.classList.toggle('active');
+            main.classList.toggle('active');
+        }
+
+        
+        let list = document.querySelectorAll('.navigation li');
+        function activeLink() {
+            list.forEach((item) =>
+            item.classList.remove('hovered'));
+            this.classList.add('hovered');
+        }
+        list.forEach((item) =>
+        item.addEventListener('mouseover',activeLink));
+    </script>
+</body>
+</html>
